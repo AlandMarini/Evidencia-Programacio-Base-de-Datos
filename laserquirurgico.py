@@ -4,11 +4,11 @@ class LaserQuirurgico:
     def __init__(self):
         self.estado = False
         self.intensidad = 0
-        self.tiempo_uso = 0
+        self.tiempo_uso = 0.0
         self.inicio_uso = None
 
     def encender(self):
-        if not self.estsado:
+        if not self.estado:
             self.estado = True
             self.inicio_uso = time.time()
 
@@ -29,4 +29,6 @@ class LaserQuirurgico:
         estado_laser = "Encendido" if self.estado else "Apagado"
         return (f"Láser: {estado_laser}, "
                 f"Intensidad: {self.intensidad}%, "
-                f"Tiempo de uso: {self.tiempo_uso:2.f} segundos")    
+                f"Tiempo de uso: {self.tiempo_uso:.2f} segundos")    
+    
+
